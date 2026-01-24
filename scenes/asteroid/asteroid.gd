@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var max_speed: int
 @export var min_speed: int
+@export var max_speed: int
 @export var min_rotation: int
 @export var max_rotation: int
 
