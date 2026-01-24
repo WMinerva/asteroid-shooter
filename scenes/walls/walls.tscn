@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo4w01gpkv17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lnch"]
+size = Vector2(1163, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bq0a"]
+size = Vector2(20, 677)
+
+[node name="Walls" type="Node2D"]
+
+[node name="TopWall" type="StaticBody2D" parent="."]
+position = Vector2(3, -11)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+position = Vector2(571.5, 0)
+shape = SubResource("RectangleShape2D_2lnch")
+
+[node name="BotWall" type="StaticBody2D" parent="."]
+position = Vector2(5, 659)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BotWall"]
+position = Vector2(571.5, 0)
+shape = SubResource("RectangleShape2D_2lnch")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-10, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(0, 328.5)
+shape = SubResource("RectangleShape2D_7bq0a")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1163, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(0, 328.5)
+shape = SubResource("RectangleShape2D_7bq0a")

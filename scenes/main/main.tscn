@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuprbq600w8r8"]
+
+[ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://k8nps0u4byf0" path="res://scenes/asteroid/big_asteroid.tscn" id="2_iuonh"]
+[ext_resource type="Script" uid="uid://ou6r4eam6pyj" path="res://scenes/main/asteroid_spawner.gd" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://u57j8cw0hyvx" path="res://scenes/player/player.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://cmo4w01gpkv17" path="res://scenes/walls/walls.tscn" id="6_ow5a4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(584, 307)
+texture = ExtResource("1_hyk8p")
+
+[node name="Player" parent="." instance=ExtResource("5_6q06x")]
+position = Vector2(195, 298)
+
+[node name="Walls" parent="." instance=ExtResource("6_ow5a4")]
+
+[node name="AsteroidSpawner" type="Marker2D" parent="."]
+position = Vector2(1282, 328)
+script = ExtResource("4_l3cfh")
+big_asteroid_scene = ExtResource("2_iuonh")
+min_y = 70
+max_y = 585
+
+[node name="Timer" type="Timer" parent="AsteroidSpawner"]
+autostart = true
+
+[connection signal="timeout" from="AsteroidSpawner/Timer" to="AsteroidSpawner" method="_on_timer_timeout"]
