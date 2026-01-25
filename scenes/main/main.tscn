@@ -16,7 +16,7 @@ position = Vector2(584, 307)
 texture = ExtResource("1_hyk8p")
 
 [node name="Player" parent="." instance=ExtResource("5_6q06x")]
-position = Vector2(195, 298)
+position = Vector2(188, 297)
 
 [node name="Walls" parent="." instance=ExtResource("6_ow5a4")]
 
@@ -33,5 +33,6 @@ autostart = true
 [node name="UiLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UiLayer" instance=ExtResource("8_yyfjg")]
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="AsteroidSpawner/Timer" to="AsteroidSpawner" method="_on_timer_timeout"]

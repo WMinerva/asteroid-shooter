@@ -8,11 +8,13 @@ radius = 49.739094
 height = 119.06665
 
 [node name="MediumAsteroid" type="Area2D" groups=["asteroids"]]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_kfrnw")
 min_speed = 250
 max_speed = 350
 min_rotation = -180
 max_rotation = 180
+points = 10
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

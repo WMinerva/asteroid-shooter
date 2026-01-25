@@ -4,6 +4,7 @@ extends Area2D
 @export var max_speed: int
 @export var min_rotation: int
 @export var max_rotation: int
+@export var points: int
 
 var random_speed
 var random_rotation
@@ -25,5 +26,10 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	#print("Area x")
-	if area.is_in_group("laser") or area.is_in_group("player"):
+	var is_player = area.is_in_group("player")
+	var is_laser = area.is_in_group("laser")
+	
+	if is_laser:
+		GameManager.add_score(points)
+	if  is_laser or is_player :
 		queue_free()

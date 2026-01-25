@@ -17,9 +17,8 @@ func process_input():
 	velocity.x = x_input * speed
 	# velocity = Vector2(x_input,y_input) * speed
 
-	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		#print("Disparar")
 		create_laser()
@@ -30,3 +29,4 @@ func _physics_process(delta: float) -> void:
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("asteroids"):
 		queue_free()
+		GameManager.set_is_game_over(true)
