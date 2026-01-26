@@ -3,15 +3,21 @@ extends Node
 var score = 0
 var is_game_over = false
 
-
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass  # Replace with function body.
+# func _ready() -> void:
+# 	pass  # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-# func _process(delta: float) -> void:
-# 	pass
+func _process(delta: float) -> void:
+	if is_game_over and Input.is_action_just_pressed("shoot"):
+		restart_game()
+
+
+func restart_game():
+	get_tree().reload_current_scene()
+	score = 0
+	is_game_over = false
 
 
 func add_score(points):

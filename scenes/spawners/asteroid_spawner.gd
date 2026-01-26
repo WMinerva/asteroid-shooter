@@ -21,4 +21,7 @@ func create_asteroid():
 
 
 func _on_timer_timeout() -> void:
+	# create_asteroid()
+	# create_asteroid()
+	# o usar un for
 	create_asteroid()
