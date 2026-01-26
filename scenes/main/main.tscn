@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuprbq600w8r8"]
+[gd_scene load_steps=8 format=3 uid="uid://cuprbq600w8r8"]
 
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://bcvtlbaxm1gjp" path="res://scenes/spawners/asteroid_spawner.tscn" id="4_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://u57j8cw0hyvx" path="res://scenes/player/player.tscn" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://cmo4w01gpkv17" path="res://scenes/walls/walls.tscn" id="6_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://cu6jk5s77dg6y" path="res://scenes/spawners/power_up_spawner.tscn" id="7_hujxm"]
 [ext_resource type="PackedScene" uid="uid://bepttmp7eelca" path="res://scenes/ui/hud/hud.tscn" id="8_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://bfyi51n01aso3" path="res://scenes/ui/game_over/game_over_ui.tscn" id="9_b1x3f"]
 
@@ -19,7 +20,7 @@ position = Vector2(188, 297)
 [node name="Walls" parent="." instance=ExtResource("6_ow5a4")]
 
 [node name="AsteroidSpawner" parent="." instance=ExtResource("4_ow5a4")]
-position = Vector2(1282, 328)
+position = Vector2(1282, 329)
 
 [node name="UiLayer" type="CanvasLayer" parent="."]
 
@@ -27,3 +28,5 @@ position = Vector2(1282, 328)
 metadata/_edit_lock_ = true
 
 [node name="GameOverUI" parent="UiLayer" instance=ExtResource("9_b1x3f")]
+
+[node name="powerUpSpawner" parent="." instance=ExtResource("7_hujxm")]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu6jk5s77dg6y"]
+
+[ext_resource type="Script" uid="uid://c8giiq4m76plh" path="res://scenes/spawners/power_up_spawner.gd" id="1_umnrb"]
+[ext_resource type="PackedScene" uid="uid://hr4j8shg04j2" path="res://scenes/power_up/power_up.tscn" id="2_3c406"]
+
+[node name="powerUpSpawner" type="Node2D"]
+script = ExtResource("1_umnrb")
+power_up_scene = ExtResource("2_3c406")
+min_y = 10
+max_y = 600
+min_x = 10
+max_x = 550
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

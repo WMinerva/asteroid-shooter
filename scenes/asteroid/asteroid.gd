@@ -6,6 +6,8 @@ extends Area2D
 @export var max_rotation: int
 @export var points: int
 
+@export var explosion_scene: PackedScene
+
 var random_speed
 var random_rotation
 
@@ -33,7 +35,13 @@ func _on_area_entered(area: Area2D) -> void:
 	if is_laser:
 		GameManager.add_score(points)
 	if is_laser or is_player:
-		queue_free()
-
+		destroy()
 	# if is_game_over_trigger:
 	# 	GameManager.set_is_game_over(true)
+
+
+func destroy():
+	var explosion_instance = explosion_scene.instantiate()
+	add_sibling(explosion_instance)
+	explosion_instance.position = position
+	queue_free()

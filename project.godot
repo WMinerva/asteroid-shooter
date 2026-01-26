@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameManager="*res://autoloads/game_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-neovim/plugin.cfg")
