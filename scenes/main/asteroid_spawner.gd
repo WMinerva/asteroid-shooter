@@ -4,8 +4,11 @@ extends Marker2D
 @export var min_y: int
 @export var max_y: int
 # Called when the node enters the scene tree for the first time.
-	
+
+
 func create_asteroid():
+	if GameManager.is_game_over:
+		$Timer.stop()
 	var random_asteroid_scene = asteroids.pick_random()
 	var random_asteroid_instance = random_asteroid_scene.instantiate()
 	#big_asteroid_instance.position.y = 200

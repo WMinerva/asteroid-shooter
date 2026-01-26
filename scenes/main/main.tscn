@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuprbq600w8r8"]
+[gd_scene load_steps=10 format=3 uid="uid://cuprbq600w8r8"]
 
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://k8nps0u4byf0" path="res://scenes/asteroid/big_asteroid.tscn" id="2_iuonh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmo4w01gpkv17" path="res://scenes/walls/walls.tscn" id="6_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://dshq485hc6dwb" path="res://scenes/asteroid/small_asteroid.tscn" id="7_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://bepttmp7eelca" path="res://scenes/ui/hud/hud.tscn" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://bfyi51n01aso3" path="res://scenes/ui/game_over/game_over_ui.tscn" id="9_b1x3f"]
 
 [node name="Main" type="Node2D"]
 
@@ -34,5 +35,7 @@ autostart = true
 
 [node name="HUD" parent="UiLayer" instance=ExtResource("8_yyfjg")]
 metadata/_edit_lock_ = true
+
+[node name="GameOverUI" parent="UiLayer" instance=ExtResource("9_b1x3f")]
 
 [connection signal="timeout" from="AsteroidSpawner/Timer" to="AsteroidSpawner" method="_on_timer_timeout"]

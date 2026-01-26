@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfyi51n01aso3"]
+[gd_scene load_steps=6 format=3 uid="uid://bfyi51n01aso3"]
 
 [ext_resource type="LabelSettings" uid="uid://ddsgw5lebhytc" path="res://resources/zyzol_orange_70.tres" id="1_3ycdo"]
+[ext_resource type="Script" uid="uid://drgi7sguttl5a" path="res://scenes/ui/game_over/game_over_ui.gd" id="1_etkqh"]
 [ext_resource type="LabelSettings" uid="uid://kdw4ewuyyeni" path="res://resources/zyzol_white_28.tres" id="2_ijods"]
 [ext_resource type="FontFile" uid="uid://cd4fts5yj7khf" path="res://assets/fonts/Zyzol.otf" id="3_etkqh"]
 
@@ -9,12 +10,14 @@ font = ExtResource("3_etkqh")
 font_color = Color(0.94, 0.48598, 0.29140002, 0.80784315)
 
 [node name="GameOverUI" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_etkqh")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

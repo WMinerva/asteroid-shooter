@@ -28,8 +28,12 @@ func _on_area_entered(area: Area2D) -> void:
 	#print("Area x")
 	var is_player = area.is_in_group("player")
 	var is_laser = area.is_in_group("laser")
+	# var is_game_over_trigger = area.is_in_group("asteroids")
 
 	if is_laser:
 		GameManager.add_score(points)
 	if is_laser or is_player:
 		queue_free()
+
+	# if is_game_over_trigger:
+	# 	GameManager.set_is_game_over(true)

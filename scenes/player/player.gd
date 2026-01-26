@@ -21,6 +21,8 @@ func process_input():
 
 
 func _physics_process(_delta: float) -> void:
+	if GameManager.is_game_over:
+		return
 	if Input.is_action_just_pressed("shoot"):
 		#print("Disparar")
 		create_laser()
